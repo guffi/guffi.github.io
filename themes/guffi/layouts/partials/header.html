@@ -1,0 +1,19 @@
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <div class="site-brand">
+      <a href="{{ "/" | relURL }}" class="site-name">{{ .Site.Title }}</a>
+    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL | relURL }}"
+         class="nav-link{{ if (or (eq $.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $.RelPermalink .URL))) }} active{{ end }}">
+        {{ .Name }}
+      </a>
+      {{ end }}
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="icon-sun" aria-hidden="true">☀</span>
+        <span class="icon-moon" aria-hidden="true">☽</span>
+      </button>
+    </nav>
+  </div>
+</header>

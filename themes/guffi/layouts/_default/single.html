@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="article-page">
+  {{- $toc := .TableOfContents }}
+  {{- $hasTOC := and (not (eq $toc "")) (gt (len $toc) 100) }}
+  <div class="article-layout{{ if $hasTOC }} has-toc{{ end }}">
+
+    {{ if $hasTOC }}
+    <aside class="toc-sidebar" id="toc-sidebar" aria-label="Table of contents">
+      <div class="toc-inner">
+        <p class="toc-title">Contents</p>
+        {{ $toc }}
+      </div>
+    </aside>
+    {{ end }}
+
+    <article class="article-content" itemscope itemtype="https://schema.org/BlogPosting">
+      <header class="article-header">
+        <h1 class="article-title" itemprop="headline">{{ .Title }}</h1>
+        <div class="article-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">
+            {{ .Date.Format "January 2, 2006" }}
+          </time>
+          {{ if .ReadingTime }}
+          <span class="separator">&middot;</span>
+          <span class="reading-time">{{ .ReadingTime }} min read</span>
+          {{ end }}
+          {{ with .Params.tags }}
+          <span class="separator">&middot;</span>
+          <span class="tags">
+            {{ range . }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+          </span>
+          {{ end }}
+        </div>
+        {{ if .Description }}
+        <p class="article-description">{{ .Description }}</p>
+        {{ end }}
+      </header>
+
+      <div class="article-body" itemprop="articleBody">
+        {{ .Content }}
+      </div>
+
+      <footer class="article-footer">
+        <div class="post-nav">
+          {{ with .PrevInSection }}
+          <a href="{{ .Permalink }}" class="post-nav-link post-nav-prev">
+            <span class="post-nav-label">&larr; Previous</span>
+            <span class="post-nav-title">{{ .Title }}</span>
+          </a>
+          {{ end }}
+          {{ with .NextInSection }}
+          <a href="{{ .Permalink }}" class="post-nav-link post-nav-next">
+            <span class="post-nav-label">Next &rarr;</span>
+            <span class="post-nav-title">{{ .Title }}</span>
+          </a>
+          {{ end }}
+        </div>
+        <div class="back-to-writing">
+          <a href="{{ "/posts/" | relURL }}">&larr; All writing</a>
+        </div>
+      </footer>
+    </article>
+
+  </div>
+</div>
+{{ end }}

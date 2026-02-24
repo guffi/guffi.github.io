@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">
+      &copy; {{ now.Year }} {{ .Site.Params.author }}
+      &ensp;&middot;&ensp;
+      <a href="https://github.com/{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      {{ if .Site.Params.email }}
+      &ensp;&middot;&ensp;
+      <a href="mailto:{{ .Site.Params.email }}">Contact</a>
+      {{ end }}
+    </p>
+  </div>
+</footer>

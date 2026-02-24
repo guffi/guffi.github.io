@@ -1,0 +1,79 @@
+backend:
+  name: github
+  repo: guffi/guffi.github.io
+  branch: main
+
+# Sveltia CMS handles OAuth directly via GitHub
+# No backend server required
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+locale: en
+
+collections:
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: content/posts
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "posts/{{slug}}"
+    sortable_fields: ['date', 'title']
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: "The essay title."
+      - label: Date
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: false
+        hint: "Set to true to keep this post hidden."
+      - label: Description
+        name: description
+        widget: string
+        required: false
+        hint: "Short summary for listings and SEO (1-2 sentences)."
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        hint: "e.g. cleantech, energy, iceland"
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        required: false
+      - label: Body
+        name: body
+        widget: markdown
+        hint: "Supports full Markdown including footnotes ([^1]) and Hugo shortcodes."
+
+  - name: pages
+    label: Pages
+    files:
+      - label: About
+        name: about
+        file: content/about.md
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: Body
+            name: body
+            widget: markdown

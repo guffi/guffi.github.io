@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="list-page">
+  <div class="container">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ if .Content }}
+    <div class="page-content">{{ .Content }}</div>
+    {{ end }}
+    <div class="post-list">
+      {{ range .Pages }}
+      {{ if not .Params.draft }}
+      <article class="post-item">
+        <div class="post-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{ if .ReadingTime }}
+          <span class="reading-time">{{ .ReadingTime }} min read</span>
+          {{ end }}
+        </div>
+        <h2 class="post-title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        {{ if .Description }}
+        <p class="post-excerpt">{{ .Description }}</p>
+        {{ else if .Summary }}
+        <p class="post-excerpt">{{ .Summary | truncate 200 | plainify }}</p>
+        {{ end }}
+      </article>
+      {{ end }}
+      {{ else }}
+      <p class="no-posts">No essays yet. Check back soon.</p>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

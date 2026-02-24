@@ -1,0 +1,8 @@
+name = "guffi"
+license = "MIT"
+description = "Custom minimal theme for Gudfinnur Sveinsson's personal writing site"
+min_version = "0.120.0"
+
+[author]
+  name = "Gudfinnur Sveinsson"
+  homepage = "https://guffi.github.io"

@@ -1,0 +1,35 @@
+baseURL = "https://guffi.github.io/"
+languageCode = "en-us"
+title = "Gudfinnur Sveinsson"
+theme = "guffi"
+enableRobotsTXT = true
+paginate = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+
+[params]
+  author = "Gudfinnur Sveinsson"
+  description = "Writing on climate tech, energy, and ideas."
+  bio = "Gudfinnur Sveinsson is an entrepreneur working on climate technology in Amsterdam. He writes about energy, ideas, and the future."
+  github = "guffi"
+  email = "gudfinnur.sveinsson@gmail.com"
+
+[menu]
+  [[menu.main]]
+    name = "Writing"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
