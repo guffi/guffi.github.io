@@ -980,3 +980,11 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-tertiary);
 }
+
+/* Press page */
+.press-list { list-style: none; padding: 0; margin: 2rem 0; }
+.press-item { padding: 1rem 0; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.25rem; }
+.press-item a { color: var(--text); font-weight: 500; text-decoration: none; }
+.press-item a:hover { color: var(--accent); }
+.press-meta { font-size: 0.85rem; color: var(--text-secondary); }
+.press-note { font-size: 0.9rem; color: var(--text-tertiary); }

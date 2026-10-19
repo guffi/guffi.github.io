@@ -1,0 +1,52 @@
+{{ define "head" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Gudfinnur Sveinsson",
+    "alternateName": "Guðfinnur Sveinsson",
+    "jobTitle": "CEO & Co-Founder",
+    "worksFor": { "@type": "Organization", "name": "Brineworks", "url": "https://brineworks.tech" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Columbia University" },
+    "url": "{{ .Site.BaseURL }}",
+    "sameAs": [
+      "https://www.crunchbase.com/person/gudfinnur-sveinsson-770c",
+      "https://medium.com/@Guffi",
+      "https://github.com/guffi"
+    ]
+  },
+  "subjectOf": [
+    {{- range $i, $a := .Params.articles }}{{ if $i }},{{ end }}
+    { "@type": "NewsArticle", "headline": {{ $a.title | jsonify }}, "url": {{ $a.url | jsonify }}, "publisher": { "@type": "Organization", "name": {{ $a.outlet | jsonify }} }{{ with $a.date }}, "datePublished": {{ . | jsonify }}{{ end }} }
+    {{- end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ define "main" }}
+<div class="article-page">
+  <div class="article-layout">
+    <article class="article-content">
+      <header class="article-header">
+        <h1 class="article-title">Gudfinnur Sveinsson — Press</h1>
+        {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
+      </header>
+
+      <ul class="press-list">
+        {{ range .Params.articles }}
+        <li class="press-item">
+          <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
+          <span class="press-meta">{{ .outlet }}{{ with .date }} &middot; {{ (time .).Format "January 2006" }}{{ end }}</span>
+          {{ with .note }}<span class="press-note">{{ . }}</span>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+
+      <div class="article-body">{{ .Content }}</div>
+    </article>
+  </div>
+</div>
+{{ end }}
