@@ -65,4 +65,4 @@ articles:
     url: "https://foundersfactory.com/articles/investing-in-brineworks/"
 ---
 
-Gudfinnur Sveinsson is CEO and co-founder of [Brineworks](https://brineworks.tech), an Amsterdam climate tech company building electrochemical direct air capture that co-produces green hydrogen for e-fuels.
+<p class="press-bio"><a href="https://www.linkedin.com/in/gudfinnursveinsson/" target="_blank" rel="noopener me">Gudfinnur Sveinsson<span class="hero-now-arrow" aria-hidden="true">&#8599;</span></a> is CEO and co-founder of <a href="https://brineworks.tech" target="_blank" rel="noopener">Brineworks<span class="hero-now-arrow" aria-hidden="true">&#8599;</span></a>, an Amsterdam climate tech company building electrochemical direct air capture that co-produces green hydrogen for e-fuels.</p>
