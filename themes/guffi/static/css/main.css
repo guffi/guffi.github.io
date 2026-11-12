@@ -359,6 +359,10 @@ a:hover {
   max-width: var(--content-width);
 }
 
+.hero-bio + .hero-bio {
+  margin-top: 1.25rem;
+}
+
 .hero-now {
   margin-top: 1.25rem;
   font-family: var(--font-serif);
