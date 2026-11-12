@@ -434,8 +434,10 @@ a:hover {
 
 .hero-bio {
   font-family: var(--font-sans);
-  font-size: 1.25rem;
-  line-height: 1.7;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.012em;
   color: var(--text);
   max-width: var(--content-width);
 }
@@ -443,12 +445,17 @@ a:hover {
 .hero-now {
   margin-top: 1.25rem;
   font-family: var(--font-sans);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   color: var(--text);
   max-width: var(--content-width);
 }
 
+.hero-bio + .hero-now {
+  margin-top: 1.6rem;
+}
+
+.hero-bio a,
 .hero-now a {
   color: var(--text);
   font-weight: 500;
@@ -457,6 +464,11 @@ a:hover {
   transition: color var(--transition-fast);
 }
 
+.hero-bio a {
+  font-weight: inherit;
+}
+
+.hero-bio a:hover,
 .hero-now a:hover {
   color: var(--accent);
 }
@@ -1019,9 +1031,12 @@ a:hover {
     font-size: 1.6rem;
   }
 
-  .hero-bio,
+  .hero-bio {
+    font-size: 1.25rem;
+  }
+
   .hero-now {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .site-nav {

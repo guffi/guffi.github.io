@@ -20,5 +20,4 @@ paginate = 10
 [params]
   author = "Gudfinnur Sveinsson"
   description = "Gudfinnur Sveinsson is CEO and co-founder of Brineworks, an Amsterdam climate tech company."
-  bio = "Gudfinnur Sveinsson is an entrepreneur based in Amsterdam, working at the intersection of climate technology and energy. He is focused on direct air capture and e-fuels — synthetic hydrocarbons made from captured CO₂ and green hydrogen — as part of the global effort to decarbonize hard-to-abate sectors like aviation and shipping."
   github = "guffi"
