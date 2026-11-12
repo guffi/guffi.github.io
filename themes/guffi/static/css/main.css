@@ -279,7 +279,10 @@ a:hover {
   background: none;
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 4px 10px;
+  padding: 0;
+  width: 36px;
+  height: 24px;
+  flex-shrink: 0;
   cursor: pointer;
   color: var(--text-secondary);
   font-size: 0.85rem;
@@ -287,7 +290,13 @@ a:hover {
   transition: all var(--transition-fast);
   display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+}
+
+.theme-toggle span {
+  width: 1em;
+  line-height: 1;
+  text-align: center;
 }
 
 .theme-toggle:hover {
