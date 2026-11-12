@@ -19,16 +19,11 @@ paginate = 10
 
 [params]
   author = "Gudfinnur Sveinsson"
-  description = "Writing on climate tech, energy, and ideas."
-  bio = "Gudfinnur Sveinsson is an entrepreneur working on climate technology in Amsterdam. He writes about energy, ideas, and the future."
+  description = "Gudfinnur Sveinsson is CEO and co-founder of Brineworks, an Amsterdam climate tech company."
+  bio = "Gudfinnur Sveinsson is an entrepreneur working on climate technology in Amsterdam."
   github = "guffi"
-  email = "gudfinnur.sveinsson@gmail.com"
 
 [menu]
-  [[menu.main]]
-    name = "Writing"
-    url = "/posts/"
-    weight = 1
   [[menu.main]]
     name = "About"
     url = "/about/"

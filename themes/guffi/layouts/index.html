@@ -8,40 +8,19 @@
         <a class="quick-link" href="/h2cost/">H₂ calculator</a>
       </nav>
       <p class="hero-bio">{{ .Site.Params.bio }}</p>
-    </div>
-  </section>
-
-  <section class="recent-posts">
-    <div class="container">
-      <h2 class="section-heading">Recent Writing</h2>
-      <div class="post-list">
-        {{ $posts := where .Site.RegularPages "Section" "posts" }}
-        {{ range first 10 $posts }}
-        <article class="post-item">
-          <div class="post-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-            {{ if .ReadingTime }}
-            <span class="reading-time">{{ .ReadingTime }} min read</span>
-            {{ end }}
-          </div>
-          <h3 class="post-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h3>
-          {{ if .Description }}
-          <p class="post-excerpt">{{ .Description }}</p>
-          {{ else if .Summary }}
-          <p class="post-excerpt">{{ .Summary | truncate 200 | plainify }}</p>
-          {{ end }}
-        </article>
-        {{ else }}
-        <p class="no-posts">No essays yet. Check back soon.</p>
-        {{ end }}
+      <p class="hero-now">
+        Currently working on
+        <a href="https://brineworks.tech" target="_blank" rel="noopener">Brineworks<span class="hero-now-arrow" aria-hidden="true">&#8599;</span></a>
+      </p>
+      <div class="hero-video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/GoWgHgIDzGk"
+          title="Brineworks video"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
       </div>
-      {{ if gt (len $posts) 10 }}
-      <div class="view-all">
-        <a href="{{ "/posts/" | relURL }}" class="view-all-link">All writing &rarr;</a>
-      </div>
-      {{ end }}
     </div>
   </section>
 </div>

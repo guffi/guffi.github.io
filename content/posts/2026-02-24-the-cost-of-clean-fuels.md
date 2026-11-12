@@ -2,7 +2,7 @@
 title: "The Cost of Clean Fuels: Where We Are and Where We're Going"
 date: 2026-02-24T10:00:00+01:00
 description: "Synthetic fuels made from captured CO₂ and green hydrogen are often dismissed as too expensive. The numbers are changing faster than most people realize."
-draft: false
+draft: true
 tags: ["cleantech", "e-fuels", "energy"]
 ---
 

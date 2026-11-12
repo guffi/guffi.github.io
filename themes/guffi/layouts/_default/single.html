@@ -57,9 +57,11 @@
           </a>
           {{ end }}
         </div>
+        {{ if eq .Section "posts" }}
         <div class="back-to-writing">
           <a href="{{ "/posts/" | relURL }}">&larr; All writing</a>
         </div>
+        {{ end }}
       </footer>
     </article>
 

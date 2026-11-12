@@ -2,7 +2,7 @@
 title: "Getting Started"
 date: 2026-02-24
 description: "First post on this site. A brief note on why I'm writing and what to expect."
-draft: false
+draft: true
 tags: ["meta"]
 ---
 
