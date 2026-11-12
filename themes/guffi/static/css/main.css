@@ -307,6 +307,84 @@ a:hover {
 [data-theme="auto"] .icon-moon { display: inline; }
 [data-theme="auto"] .icon-sun { display: none; }
 
+/* ===== CO2 widget (header) ===== */
+.co2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+}
+
+.co2:hover {
+  color: var(--text-secondary);
+}
+
+.co2-chart {
+  display: block;
+  flex-shrink: 0;
+}
+
+.co2-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.95;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.co2-dot {
+  fill: currentColor;
+}
+
+.co2-ref {
+  stroke: var(--text-tertiary);
+  stroke-width: 0.45;
+  stroke-dasharray: 1.7 2.5;
+}
+
+.co2-tick {
+  stroke: var(--text-tertiary);
+  stroke-width: 0.6;
+}
+
+.co2-label {
+  font-family: var(--font-sans);
+  font-size: 9.4px;
+  fill: var(--text-tertiary);
+}
+
+.co2-read {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.3rem;
+}
+
+.co2-now strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.co2-yoy {
+  font-size: 0.62rem;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 760px) {
+  .co2-chart {
+    display: none;
+  }
+
+  .co2-read {
+    padding-top: 0;
+  }
+}
+
 /* ===== Homepage ===== */
 .homepage {
   padding-top: 4rem;

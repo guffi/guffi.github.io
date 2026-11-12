@@ -3,6 +3,9 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Daily rebuild so the header CO2 reading stays current
+    - cron: "23 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -33,6 +36,16 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+
+      - name: Restore last CO2 data
+        uses: actions/cache@v4
+        with:
+          path: assets/data/co2.json
+          key: co2-${{ github.run_id }}
+          restore-keys: co2-
+
+      - name: Fetch CO2 data
+        run: node scripts/co2.mjs
 
       - name: Build with Hugo
         run: |

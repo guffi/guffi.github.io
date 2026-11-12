@@ -1,0 +1,26 @@
+{{- /* Header CO2 widget. Data is written to assets/data/co2.json by scripts/co2.mjs during deploy. */ -}}
+{{- with resources.Get "data/co2.json" -}}
+{{- with . | transform.Unmarshal -}}
+{{- if and .points .ppm -}}
+<a class="co2" href="https://gml.noaa.gov/ccgg/trends/" target="_blank" rel="noopener" title="{{ .title }}" aria-label="{{ .title }}">
+  <svg class="co2-chart" viewBox="0 0 204 44.2" width="240" height="52" aria-hidden="true" focusable="false">
+    <line class="co2-ref" x1="0" y1="{{ .y300 }}" x2="200" y2="{{ .y300 }}"/>
+    <polyline class="co2-line" points="{{ .points }}"/>
+    <circle class="co2-dot" cx="200" cy="{{ .dotY }}" r="1.9"/>
+    <line class="co2-tick" x1="0.4" y1="31.5" x2="0.4" y2="33.5"/>
+    <line class="co2-tick" x1="{{ .xSapiens }}" y1="31.5" x2="{{ .xSapiens }}" y2="33.5"/>
+    <line class="co2-tick" x1="200" y1="31.5" x2="200" y2="33.5"/>
+    <text class="co2-label" x="0" y="41.5">800k yrs ago</text>
+    <text class="co2-label" x="{{ .xSapiens }}" y="41.5" text-anchor="middle">Homo sapiens</text>
+    <text class="co2-label" x="203" y="41.5" text-anchor="end">today</text>
+  </svg>
+  <span class="co2-read">
+    <span class="co2-now"><strong>{{ .ppm }} ppm</strong> CO₂</span>
+    {{- with .yoy }}
+    <span class="co2-yoy">{{ . }} / yr</span>
+    {{- end }}
+  </span>
+</a>
+{{- end -}}
+{{- end -}}
+{{- end -}}
