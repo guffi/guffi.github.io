@@ -318,11 +318,7 @@ a:hover {
   line-height: 1.35;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
-  text-decoration: none;
-}
-
-.co2:hover {
-  color: var(--text-secondary);
+  cursor: default;
 }
 
 .co2-chart {
@@ -344,12 +340,14 @@ a:hover {
 
 .co2-ref {
   stroke: var(--text-tertiary);
+  stroke-opacity: 1;
   stroke-width: 0.45;
   stroke-dasharray: 1.7 2.5;
 }
 
 .co2-tick {
   stroke: var(--text-tertiary);
+  stroke-opacity: 1;
   stroke-width: 0.6;
 }
 
@@ -357,6 +355,7 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 9.4px;
   fill: var(--text-tertiary);
+  fill-opacity: 1;
 }
 
 .co2-read {
