@@ -3,22 +3,22 @@
 {{- with resources.Get "data/co2.json" -}}
 {{- with . | transform.Unmarshal -}}
 {{- if and .points .ppm -}}
-<div class="co2" role="img" aria-label="{{ .title }}" style="display:flex;align-items:flex-start;gap:.6rem;white-space:nowrap;font-size:13px;line-height:1.35">
-  <svg class="co2-chart" viewBox="0 0 204 44.2" width="240" height="52" aria-hidden="true" focusable="false">
+<div class="co2" role="img" aria-label="{{ .title }}" style="display:flex;align-items:center;gap:.6rem;white-space:nowrap;font-size:13px;line-height:1.35">
+  <svg class="co2-chart" viewBox="0 0 204 31.2" width="240" height="37" aria-hidden="true" focusable="false">
     <line class="co2-ref" x1="0" y1="{{ .y300 }}" x2="200" y2="{{ .y300 }}" stroke="currentColor" stroke-opacity=".45" stroke-width=".45" stroke-dasharray="1.7 2.5"/>
     <polyline class="co2-line" points="{{ .points }}" fill="none" stroke="currentColor" stroke-width=".95" stroke-linejoin="round" stroke-linecap="round"/>
-    <circle class="co2-dot" cx="200" cy="{{ .dotY }}" r="1.9" fill="currentColor"/>
-    <line class="co2-tick" x1="0.4" y1="31.5" x2="0.4" y2="33.5" stroke="currentColor" stroke-opacity=".6" stroke-width=".6"/>
-    <line class="co2-tick" x1="{{ .xSapiens }}" y1="31.5" x2="{{ .xSapiens }}" y2="33.5" stroke="currentColor" stroke-opacity=".6" stroke-width=".6"/>
-    <line class="co2-tick" x1="200" y1="31.5" x2="200" y2="33.5" stroke="currentColor" stroke-opacity=".6" stroke-width=".6"/>
-    <text class="co2-label" x="0" y="41.5" font-size="9.4" fill="currentColor" fill-opacity=".7">800k yrs ago</text>
-    <text class="co2-label" x="{{ .xSapiens }}" y="41.5" text-anchor="middle" font-size="9.4" fill="currentColor" fill-opacity=".7">Homo sapiens</text>
-    <text class="co2-label" x="203" y="41.5" text-anchor="end" font-size="9.4" fill="currentColor" fill-opacity=".7">today</text>
+    <circle class="co2-dot" cx="200" cy="{{ .dotY }}" r="1.7" fill="currentColor"/>
+    <line class="co2-tick" x1="0.4" y1="19.7" x2="0.4" y2="21.5" stroke="currentColor" stroke-opacity=".6" stroke-width=".6"/>
+    <line class="co2-tick" x1="{{ .xSapiens }}" y1="19.7" x2="{{ .xSapiens }}" y2="21.5" stroke="currentColor" stroke-opacity=".6" stroke-width=".6"/>
+    <line class="co2-tick" x1="200" y1="19.7" x2="200" y2="21.5" stroke="currentColor" stroke-opacity=".6" stroke-width=".6"/>
+    <text class="co2-label" x="0" y="28.7" font-size="7.6" fill="currentColor" fill-opacity=".7">800k yrs ago</text>
+    <text class="co2-label" x="{{ .xSapiens }}" y="28.7" text-anchor="middle" font-size="7.6" fill="currentColor" fill-opacity=".7">Homo sapiens</text>
+    <text class="co2-label" x="203" y="28.7" text-anchor="end" font-size="7.6" fill="currentColor" fill-opacity=".7">today</text>
   </svg>
   <span class="co2-read" style="display:flex;flex-direction:column">
     <span class="co2-now"><strong>{{ .ppm }} ppm</strong> CO₂</span>
     {{- with .yoy }}
-    <span class="co2-yoy">{{ . }} / yr</span>
+    <span class="co2-yoy" style="font-size:10px">{{ . }} / yr</span>
     {{- end }}
   </span>
 </div>

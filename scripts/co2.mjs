@@ -19,10 +19,10 @@ const DAILY = process.env.CO2_DAILY_URL ||
 const MONTHLY = process.env.CO2_MONTHLY_URL ||
   'https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.csv';
 
-// Chart geometry, in SVG viewBox units (viewBox is 0 0 204 44.2).
+// Chart geometry, in SVG viewBox units (viewBox is 0 0 204 31.2).
 const W = 200;          // plot width
 const Y_TOP = 2.2;      // y of today's reading
-const Y_BOTTOM = 30;    // y of FLOOR_PPM
+const Y_BOTTOM = 18.2;  // y of FLOOR_PPM
 const FLOOR_PPM = 170;
 const SPAN_BP = 800000; // years before 1950 shown at the left edge
 const BIN_YEARS = 2500;

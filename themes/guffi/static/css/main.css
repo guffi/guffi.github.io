@@ -319,7 +319,7 @@ a:hover {
 /* ===== CO2 widget (header) ===== */
 .co2 {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.6rem;
   color: var(--text-secondary);
   font-family: var(--font-sans);
@@ -362,7 +362,7 @@ a:hover {
 
 .co2-label {
   font-family: var(--font-sans);
-  font-size: 9.4px;
+  font-size: 7.6px;
   fill: var(--text-tertiary);
   fill-opacity: 1;
 }
@@ -370,7 +370,6 @@ a:hover {
 .co2-read {
   display: flex;
   flex-direction: column;
-  padding-top: 0.3rem;
 }
 
 .co2-now strong {
@@ -379,17 +378,13 @@ a:hover {
 }
 
 .co2-yoy {
-  font-size: 0.62rem;
+  font-size: 10px;
   color: var(--text-tertiary);
 }
 
 @media (max-width: 760px) {
   .co2-chart {
     display: none;
-  }
-
-  .co2-read {
-    padding-top: 0;
   }
 }
 
