@@ -885,6 +885,7 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 0.82rem;
   color: var(--text-tertiary);
+  text-align: center;
 }
 
 .footer-copy a {

@@ -3,12 +3,16 @@
     <p class="footer-copy">
       &copy; {{ now.Year }} {{ .Site.Params.author }}
       &ensp;&middot;&ensp;
+      <a href="/solar-calculator/">Solar calculator</a>
+      &ensp;&middot;&ensp;
+      <a href="/h2cost/">H₂ calculator</a>
+      &ensp;&middot;&ensp;
+      <a href="/emethane/">E-methane calculator</a>
+      {{ if not .IsHome }}
+      &ensp;&middot;&ensp;
       <a href="https://github.com/{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
       &ensp;&middot;&ensp;
       <a href="{{ "/press/" | relURL }}">Press</a>
-      {{ if .Site.Params.email }}
-      &ensp;&middot;&ensp;
-      <a href="mailto:{{ .Site.Params.email }}">Contact</a>
       {{ end }}
     </p>
   </div>
